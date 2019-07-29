@@ -1,0 +1,25 @@
+body {
+    margin: 20px;
+}
+
+.profile {
+    width: 22.5rem;
+    height: 100%;
+    padding-top: 20px;
+    background-color: lightsteelblue;
+    position: fixed;
+    text-align: center;
+}
+
+.profile > p {
+    margin: 0 2rem;
+}
+
+.profile > h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.profile .divider {
+    width: 80%;
+}

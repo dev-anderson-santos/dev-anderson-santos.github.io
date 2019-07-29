@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard - Controle de Estoque</title>
-    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 
-<body>
-    Bem vindo ao painel de controle do estoque - <span id="username"></span>
-
-    
-
+<body style="background-color: #dddee3">    
+    <div class="container" style="text-align: center">
+        <p>Bem vindo <span id="username"></span></p>
+        
+        <img src="/img/em-construcao.jpg" alt="">
+        <p>
+            <a href="../../index.html">Voltar</a>
+        </p>
+    </div>
     <script>document.getElementById("username").innerHTML = localStorage.getItem("user");</script>
+
 </body>
 
 </html>
