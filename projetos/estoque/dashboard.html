@@ -6,19 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard - Controle de Estoque</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+
 </head>
 
-<body style="background-color: #dddee3">    
+<body style="background-color: #dddee3">
     <div class="container" style="text-align: center">
         <p>Bem vindo <span id="username"></span></p>
-        
+
         <img src="/img/em-construcao.jpg" alt="">
         <p>
             <a href="../../index.html">Voltar</a>
         </p>
     </div>
-    <script>document.getElementById("username").innerHTML = localStorage.getItem("user");</script>
 
+    <script src="js/app.js"></script>
+    <!-- script>document.getElementById("username").innerHTML = localStorage.getItem("user");</script -->
 </body>
 
 </html>
