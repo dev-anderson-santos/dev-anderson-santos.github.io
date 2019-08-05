@@ -15,47 +15,57 @@ const db = firebase.database();
 
 var username = $('#username').val();
 var senha = $('#password').val();
+
+var new_fullname = $("#new-fullname").val();
 var new_username = $("#new-username").val();
-var new_username_password = $("#new-username-password").val();
+var new_email = $("#new-email").val();
+var new_username_password = $("#new-password").val();
 
 var btn_criar_conta = $("#btn-criar-conta");
 var btn_login = $("#btn-login");
 
-btn_login.click(function () {
-  login();
+$('#form-login').submit(function (event) {
+  if($('#username').val() != "" || $('#password').val() != "") {
+    login();
+  } else {
+    alert("Preencha os dados");
+  }  
+  event.preventDefault();
 });
 
-btn_criar_conta.click(function () {
-
-  /*if (new_username == "" || new_username_password == "") {
+$('#form-new-account').submit(function (event) {  
+  
+  if ($("#new-username").val() == "" || $("#new-fullname").val() == "" || $("#new-email").val() == "" || $("#new-password").val() == "") {
     alert("Preencha os campos");
-  } else {*/
-
-  createUser($("#new-username").val(), $("#new-username-password").val());
-  window.location.href = "index.html";
-  //}
+  } else {
+    createUser($("#new-username").val(), $("#new-fullname").val(), $("#new-email").val(), $("#new-password").val());
+    window.location.href = "login.html";
+    event.preventDefault();
+  }
 });
 
-function createUser(user, senha) {
-  db.ref(user + '/').set({
-    email: user,
+function createUser(username, fullname, email, senha) {
+  db.ref('usuarios/' + username + '/').set({
+    username: username,
+    fullname: fullname,
+    email: email,
     pw: senha
   });
 }
 
 function login() {
-  const userObj = db.ref($('#username').val());
+  const userObj = db.ref('usuarios');
   userObj.once("value")
     .then(function (snapshot) {
 
-      var user = snapshot.child('email').val();
-      var pw = snapshot.child('pw').val();
-
+      var user = snapshot.child($('#username').val() + '/username').val();
+      var pw = snapshot.child($('#username').val() + '/pw').val();    
+      
       if (user != $('#username').val() || pw != $('#password').val()) {
         alert("Dados incorretos ou o usuário não existe");
       } else {
-        window.location.href = "dashboard.html";
+        window.location.href = "restrito/dashboard.html";
       }
-
+      
     });
 }
