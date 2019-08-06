@@ -1,5 +1,4 @@
-// Your web app's Firebase configuration
-var firebaseConfig = {
+let firebaseConfig = {
   apiKey: "AIzaSyD_MfCUlSvh6StZyXj3yYuch_efhKdp2W0",
   authDomain: "sacolao-2d.firebaseapp.com",
   databaseURL: "https://sacolao-2d.firebaseio.com",
@@ -8,11 +7,23 @@ var firebaseConfig = {
   messagingSenderId: "785939967024",
   appId: "1:785939967024:web:aa929f73d830e976"
 };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-// Get a reference to the database service
-const db = firebase.database();
 
+// Your web app's Firebase configuration
+export class FirebaseService {
+  
+  constructor() {  
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // Get a reference to the database service
+    this._db = firebase.database();
+  }
+
+  get database() {
+    return this._db;
+  }
+
+}
+/*
 var username = $('#username').val();
 var senha = $('#password').val();
 
@@ -69,3 +80,4 @@ function login() {
       
     });
 }
+*/
