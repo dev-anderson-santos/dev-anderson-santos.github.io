@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="projetos/estoque/plugins/fontawesome-free/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"> -->
     <title>Anderson Santos - Portifólio</title>
 </head>
 
@@ -17,8 +20,8 @@
                 <h1>Anderson Santos</h1>
                 <hr class="divider">
                 <p>Desenvolvedor back e front-end e criador de conteúdo no blog <a href="#">Programador Consciente</a>
-                </p>
-            </div>
+                </p>                
+            </div>            
         </aside>
         <section class="container">
             <div class="row">
@@ -30,6 +33,7 @@
                             <h5 class="card-title">Sacolão 2D - Estoque</h5>
                             <p class="card-text">Controle de estoque simples utilizando HTML5, Bootstrap e Firebase.</p>
                             <a href="projetos/estoque/login.html" class="btn btn-primary">Visitar</a>
+                            <div id="like_button_container" class="fas fa-thumbs-up"></div>
                         </div>
                     </div>
                 </div>
@@ -92,6 +96,14 @@
             </div>
         </section>
     </main>
+
+    <!-- Adicionar o React. -->
+  <!-- Nota: ao fazer o deploy, substitua "development.js" por "production.min.js". -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Adicione nosso componente React. -->
+  <script src="js/like_button.js"></script>
 </body>
 
 </html>
